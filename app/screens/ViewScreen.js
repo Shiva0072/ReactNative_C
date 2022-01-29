@@ -1,13 +1,18 @@
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
+import { FontAwesome5, FontAwesome } from "@expo/vector-icons";
 
 import colors from "../config/colors";
 
 function ViewScreen(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.closeIcon}></View>
-      <View style={styles.deleteIcon}></View>
+      <View style={styles.closeIcon}>
+        <FontAwesome name="close" size={35} color="white" />
+      </View>
+      <View style={styles.deleteIcon}>
+        <FontAwesome5 name="trash-alt" size={35} color="white" />
+      </View>
       <Image
         resizeMode="contain"
         style={styles.image}
@@ -24,17 +29,11 @@ const styles = StyleSheet.create({
   },
   closeIcon: {
     position: "absolute",
-    height: 50,
-    width: 50,
-    backgroundColor: colors.primary,
     top: 40,
     left: 30,
   },
   deleteIcon: {
     position: "absolute",
-    height: 50,
-    width: 50,
-    backgroundColor: colors.secondary,
     top: 40,
     right: 30,
   },
